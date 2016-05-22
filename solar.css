@@ -2,20 +2,20 @@ body {
 	background-image: url('stars.png');
 
 }
-@-moz-keyframes spin { 100% { -moz-transform: rotate(-360deg); } }
+@-moz-keyframes spin { 100% { -moz-transform: rotate(-360deg); } }  /*defines anti cloc spin of planets*/
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(-360deg); } }
 @keyframes spin { 100% { transform:rotate(-360deg); } }
 
-@-moz-keyframes spincloc { 100% { -moz-transform: rotate(360deg); } }
+@-moz-keyframes spincloc { 100% { -moz-transform: rotate(360deg); } }  /*defines clock wise spin of planets*/
 @-webkit-keyframes spincloc { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spincloc { 100% { transform:rotate(360deg); } }
-.system {
+.system {		
 	float:left;
 	height: 600px;
 	width:100%;
 	min-width: 700px;
 	position:relative;
-}
+}							/*sets the position and dimensions of solar system*/
 .sun {
 	width: 200px;
 	height: 200px;
@@ -27,7 +27,7 @@ body {
 	margin-top: -100px;
 	margin-left: -100px;
 	z-index:5;
-}
+}							/*sets the position and shape of sun*/
 #planet1 {
 	width: 275px;
 	height: 275px;
@@ -38,7 +38,7 @@ body {
 	left: 50%;
 	margin-top: -137.5px;
 	margin-left: -137.5px;
-}
+}							/*sets the posiition and dimesions of planet one orbit*/
 #planet_1{
 	width: 20px;
 	height: 20px;
@@ -49,7 +49,7 @@ body {
 	margin-top: -10px;
 	margin-left: -10px;
 	z-index: 10;
-}
+}							/*sets the dimensions and shape of planet1*/
 #planet2{
 	width: 350px;
 	height: 350px;
@@ -60,7 +60,7 @@ body {
 	left: 50%;
 	margin-top: -175px;
 	margin-left: -175px;
-}
+}							/*sets the dimension and shape of orbit of planet2*/
 #planet_2{
 	width:25px;
 	height: 25px;
@@ -70,7 +70,7 @@ body {
 	top: 50%;
 	margin-top: -12.5px;
 	margin-left: -12.5px;
-}
+}							/*sets the dimension and shape of planet2*/
 #planet3{
 	width: 450px;
 	height: 450px;
@@ -81,7 +81,7 @@ body {
 	left: 50%;
 	margin-top: -225px;
 	margin-left: -225px;
-}
+}							/*sets the dimension and shape of orbit of planet 3*/
 #planet_3{
 	width:40px;
 	height: 40px;
@@ -91,7 +91,7 @@ body {
 	top: 50%;
 	margin-top: -20px;
 	margin-left: -20px;
-}
+}							/*sets the dimension and shape of planet3*/
 .controls{
 	position: relative;
 	top: 20px;
@@ -99,12 +99,12 @@ body {
 	height: 280px;
 	min-width: 700px;
 	clear: both;	
-}
-
+}							/*sets the dimension of control block*/
+	
 #master_controller, #planet1_controller, #planet2_controller, #planet3_controller {
 	height: 50px;
 	margin-bottom: 10px;
-}
+}							/*sets the height and position of each planet control*/
 #mstr_control, #planet1_control, #planet2_control, #planet3_control {
 	text-align: center;
 	font-weight: bold;
@@ -112,14 +112,14 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 	vertical-align: center;
 	color:white;
-}
+}							/*sets the style of the control*/
 span {
 	position: relative;
 	top: -19px;
 	background-color: #14A7D9;
 	padding: 4px 6px;
 	border-radius: 25px;
-}
+}							/*sets the style of control buttons*/
 #m_controls, #p1_controls, #p2_controls, #p3_controls{
 	display: none;
 	text-align: center;
@@ -136,7 +136,7 @@ i {
 	padding: 0px 5px;
 	padding-top: 10px;
 	background-color: #14A7D9;
-}
+}							/*sets the loction and style of control buttons*/
 i:hover {
 	background-color: #999;
 }
@@ -144,41 +144,41 @@ i:hover {
 	-webkit-animation:spin 8s linear infinite;
     -moz-animation:spin 8s linear infinite;
     animation:spin 8s linear infinite;
-}
+}							/*sets the anti clock animation to planet 1*/	
 .planet2_anim_anti {
 	-webkit-animation:spin 20s linear infinite;
     -moz-animation:spin 20s linear infinite;
     animation:spin 20s linear infinite;
-}
+}							/*sets the anti clock animation to planet 2*/
 .planet3_anim_anti {
 	-webkit-animation:spin 10s linear infinite;
     -moz-animation:spin 10s linear infinite;
     animation:spin 10s linear infinite;
-}
+}							/*sets the anti cloc animation to planet 3*/
 .planet1_anim_cloc {
 	-webkit-animation:spincloc 8s linear infinite; 
     -moz-animation:spincloc 8s linear infinite;
     animation:spincloc 8s linear infinite;
-}
+}							/*sets the clockwise animation to planet 1*/
 .planet2_anim_cloc {
 	-webkit-animation:spincloc 20s linear infinite;
     -moz-animation:spincloc 20s linear infinite;
     animation:spincloc 20s linear infinite;
-}
+}							/*sets the clockwise animation to planet 2*/
 .planet3_anim_cloc {
 	-webkit-animation:spincloc 10s linear infinite;
     -moz-animation:spincloc 10s linear infinite;
     animation:spincloc 10s linear infinite;
-}
+}							/*sets the clockwise animation to planet3*/
 .paused{
     -webkit-animation-play-state:paused !important;
     -moz-animation-play-state:paused !important;
     -o-animation-play-state:paused !important; 
     animation-play-state:paused !important;
-}
+}							/*paused animation to planets*/
 .initial{
 	-webkit-animation-play-state:initial;
 	-moz-animation-play-state:initial;
 	-o-animation-play-state:initial;
 	animation-play-state:initial;
-}
+}							/*goes back to initial state*/
