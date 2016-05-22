@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Solar system</title>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="solar.css" /> <!--css link-->
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+	<script>
+		function mouse_over(id) {							/*function to toggle display for control buttons*/	
+			var c = document.getElementById(id).childNodes;
+			document.getElementById(c[1].id).style.display='none';
+			document.getElementById(c[3].id).style.display='block';
+		}
+		function mouse_out(id) {
+			var c = document.getElementById(id).childNodes;
+			document.getElementById(c[3].id).style.display='none';
+			document.getElementById(c[1].id).style.display='block';
+		}
+		function m_pause() {								/* function that controls master pause*/
+			p_pause('planet1');
+			p_pause('planet2');
+			p_pause('planet3');
+		}
+		function m_play() {								/*function that controls master play*/
+			p_play('planet1');
+			p_play('planet2');
+			p_play('planet3');
+		}
+		function m_stop() {								/*function that controls master stop*/
+			p_stop('planet1');
+			p_stop('planet2');
+			p_stop('planet3');
+		}
+		function m_anti() {								/*function that changes the rotation to anti clockwise*/
+			p_anti('planet1');
+			p_anti('planet2');
+			p_anti('planet3');
+		}
+		function m_cloc() {								/*function that changes the rotation to clockwise*/
+			p_cloc('planet1');
+			p_cloc('planet2');
+			p_cloc('planet3');
+		}
+		function p_pause(id) {							/*function that controls planet-wise pause*/
+			var c = id.substr(0,7);
+			var d = document.getElementById(c);
+			d.className += " paused";					/*adds paused class to the element*/
+		}
+		function p_play(id) {							/*function that controls planet-wise play*/
+			var c = id.substr(0,7);
+			var d = document.getElementById(c);
+			d.classList.remove("paused");
+			d.classList.remove("initial");
+		}
+		function p_stop(id) {							/*function that controls planet-wise stop*/
+			var c = id.substr(0,7);
+			var d = document.getElementById(c);
+			var p = d.classList;
+			var e =p[0].toString()+" paused"+" initial";
+			d.classList.remove(p[0]);
+			d.classList.remove(p[1]);						
+			d.offsetWidth = d.offsetWidth;
+			d.className = e;								/*changes the class of the element to stop state*/
+		}
+		function p_anti(id) {							/*function that changes the planet wise rotation to anticlockwise*/
+			var c = id.substr(0,7);
+			var d = document.getElementById(c);
+			var p = c+"_anim_cloc"; 
+			d.classList.remove(p);
+			var c = c+"_anim_anti";
+			d.classList.add(c);
+		}
+		function p_cloc(id) {							/*function that changes the planet wise rotation to clockwise*/
+			var c = id.substr(0,7);
+			var d = document.getElementById(c);
+			var p = c+"_anim_anti";
+			d.classList.remove(p);
+			var c = c+"_anim_cloc";
+			d.classList.add(c);
+		}
+	</script>
+</head>
+<body>
+<div class="system">										<!--creates system of planets and sun-->
+	<div class="sun"></div>
+	<div id="planet1" class="planet1_anim_anti"><div id="planet_1"></div></div>
+	<div id="planet2" class="planet2_anim_anti"><div id="planet_2"></div></div>
+	<div id="planet3" class="planet3_anim_anti"><div id="planet_3"></div></div>
+</div>
+<div class="controls" >									<!--creates controls to control the movement-->
+	<div id="master_controller" onmouseover="mouse_over(this.id);" onmouseout="mouse_out(this.id);"> 
+		<p id="mstr_control" ><span id="pan">MASTER CONTROL</span></p>
+ 		<p id="m_controls" >
+ 			<i class="fa fa-play" id="mas_play" onclick="m_play();"></i>
+ 			<i class="fa fa-pause" id="mas_pause" onclick="m_pause();"></i>
+ 			<i class="fa fa-stop" id="mas_stop" onclick="m_stop();"></i>
+ 			<i class="fa fa-rotate-left" id="mas_anti" onclick="m_anti();"></i>
+ 			<i class="fa fa-rotate-right" id="mas_cloc" onclick="m_cloc();"></i>
+ 		 </p>
+	</div>
+	<div id="planet1_controller" onmouseover="mouse_over(this.id);" onmouseout="mouse_out(this.id);">		
+ 		<p id="planet1_control"><span>Planet 1</span></p>
+	    <p id="p1_controls">
+ 			<i class="fa fa-play" id="planet1_play" onclick="p_play(this.id);"></i>
+ 			<i class="fa fa-pause" id="planet1_pause" onclick="p_pause(this.id);"></i>
+ 			<i class="fa fa-stop" id="planet1_stop" onclick="p_stop(this.id);"></i>
+ 			<i class="fa fa-rotate-left" id="planet1_anti" onclick="p_anti(this.id);"></i>
+ 			<i class="fa fa-rotate-right" id="planet1_cloc" onclick="p_cloc(this.id);"></i>
+ 		</p>
+	</div>	
+	<div id="planet2_controller" onmouseover="mouse_over(this.id);" onmouseout="mouse_out(this.id);">
+		<p id="planet2_control"><span>Planet 2</span></p> 		
+ 		<p id="p2_controls">
+ 			<i class="fa fa-play" id="planet2_play" onclick="p_play(this.id);"></i>
+ 			<i class="fa fa-pause" id="planet2_pause" onclick="p_pause(this.id);"></i>
+ 			<i class="fa fa-stop" id="planet2_stop" onclick="p_stop(this.id);"></i>
+ 			<i class="fa fa-rotate-left" id="planet2_anti" onclick="p_anti(this.id);"></i>
+ 			<i class="fa fa-rotate-right" id="planet2_cloc" onclick="p_cloc(this.id);"></i>
+ 		</p>
+	</div>
+	<div id="planet3_controller" onmouseover="mouse_over(this.id);" onmouseout="mouse_out(this.id);">
+ 		<p id="planet3_control"><span>Planet 3</span></p>
+ 		<p id="p3_controls">
+ 			<i class="fa fa-play" id="planet3_play" onclick="p_play(this.id);"></i>
+ 			<i class="fa fa-pause" id="planet3_pause" onclick="p_pause(this.id);"></i>
+ 			<i class="fa fa-stop" id="planet3_stop" onclick="p_stop(this.id);"></i>
+ 			<i class="fa fa-rotate-left" id="planet3_anti" onclick="p_anti(this.id);"></i>
+ 			<i class="fa fa-rotate-right" id="planet3_cloc" onclick="p_cloc(this.id);"></i>
+ 		</p>
+	</div>
+</div>
+</body>
+</html>

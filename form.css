@@ -1,0 +1,39 @@
+body {
+	background-color: #ccc;
+	margin: 5px	 0 5px 0;
+}
+#main {
+	box-shadow: 15px 15px 3px #aaa;
+	border-radius: 2px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: white;
+}
+fieldset {
+	border-bottom: none !important;
+}
+#saarang {
+	width: 20%;
+	height: 90px;
+	min-width: 90px;
+	padding-left: 10px;
+}
+#iitm {
+	width: 10%;
+	height: 90px;
+	min-width: 90px;
+	padding-right:10px;
+}
+#age {
+	max-width:100px;
+}
+#accomodation{
+	display: none;
+}
+#acc_date{
+	max-width: 400px;
+}
+legend {
+	background-color: white;
+	border: 0;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Saarang Registration form</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!--for responsive web design-->
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+ <link rel="stylesheet" href="form.css">
+<script>
+function accom_visibility() {
+if(document.getElementById('acc_yes').checked) {
+	document.getElementById('accomodation').style.display = 'block';
+}
+if(document.getElementById('acc_no').checked) {
+	document.getElementById('accomodation').style.display = 'none';
+}
+}
+</script>
+</head>
+<body>
+<div class="container" id="main">
+	<div class="row">
+		<img id="saarang" src="saarang.png" class="pull-left img-responsive" />
+		<img id="iitm" src="logo.png"  class="pull-right img-responsive"/>
+	</div>
+	<div class="page-header text-center">
+		<h1>Saarang 2017</h1>
+		<h2>Event Registration form</h2>
+	</div>
+	<form role="form" class="form-horizontal">
+	<fieldset class="well">
+	<legend>Personal Information</legend>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="name">Name:</label>
+			<div class="col-sm-5">
+			<input type="text" class="form-control" name="firstName" placeholder="first Name" required   />
+			</div>
+			<div class="col-sm-5">
+				<input type="text" class="form-control" name="lastName" placeholder="last Name" required  />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2 col-xs-2">Age:</label>
+			<div class="col-sm-2" id="age">
+				<input type="number" class="form-control" name="age" min="1" max="100" required placeholder="age"/>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2">Gender: </label>
+			<div class="radio col-sm-1 col-sm-offset-1 col-xs-offset-2">
+				<input type="radio" name="gender" value="Male" checked   /><span>Male</span>
+			</div>
+			<div class="radio col-sm-1 col-xs-offset-2">
+				<input type="radio" name="gender" value="Female" required   /><span>Female</span>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="email" class="control-label col-sm-2">Email: </label> 
+			<div class="col-sm-10">
+				<input type="email" class="form-control" name="email-id" placeholder="Email-id" required />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="college" class="control-label col-sm-2">College: </label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" name="institution" placeholder="college name" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="city" class="control-label col-sm-2">City: </label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" name="city" placeholder="city Name" />
+			</div>
+		</div>
+	</fieldset>
+	<fieldset class="well">
+		<legend>Registration details</legend>
+			<div class="form-group">
+				<h4 class="col-sm-offset-1">Events:</h4>
+		 		<h5 class="col-sm-offset-2" style="margin-bottom:0px;">Type-1:</h5>
+		 		<div class="col-sm-offset-3 col-xs-offset-1"> 
+			 		<div class="checkbox">
+						<label><input type="checkbox" value="event1"/>Event-1</label>
+					</div>
+		 			<div class="checkbox">
+						<label><input type="checkbox" value="event1"/>Event-1</label>
+					</div>
+		 			<div class="checkbox">
+						<label><input type="checkbox" value="event1"/>Event-1</label>
+					</div>
+		 		</div>
+		 		<h5 class="col-sm-offset-2" style="margin-bottom:0px;">Type-1:</h5>
+				<div class="col-sm-offset-3 col-xs-offset-1">
+			 		<div class="checkbox">
+						<label><input type="checkbox" value="event1"/>Event-1</label>
+					</div>
+		 			<div class="checkbox">
+						<label><input type="checkbox" value="event1"/>Event-1</label>
+					</div>
+		 			<div class="checkbox">
+						<label><input type="checkbox" value="event1"/>Event-1</label>
+					</div>
+		 		</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="accomodation">Accomodation required: </label>
+				<div class="radio col-sm-1 col-sm-offset-1 col-xs-offset-2">
+					<input type="radio" onclick="accom_visibility();" name="accomodation" id="acc_yes"/>Yes
+				</div>
+				<div class="radio col-sm-1 col-sm-offset-1 col-xs-offset-2">
+					<input type="radio" onclick="accom_visibility();" name="accomodation" id="acc_no"/>No
+				</div>
+			</div>
+			<div id="accomodation" class="form-group">
+				<label for="startDate" class="control-label col-sm-2">Start date: </label>
+				<div class="col-sm-4" id="acc_date">
+					<input type="date" name="startDate" class="form-control"/> 
+				</div>
+				<label for="endDate" class="control-label col-sm-2">End date: </label>
+				<div class="col-sm-4" id="acc_date">	
+					<input type="date" class="form-control" name="endDate"/>
+				</div>
+			</div>
+	</fieldset>
+	<div class="text-center">
+		<button class="btn btn-info center-block">Submit Entry</button>
+	</div>
+	</form>
+</div>
+</body>
+</html>
